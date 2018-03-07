@@ -5,4 +5,4 @@ const context = require('./context')
 
 const server = new GraphQLServer({ typeDefs, resolvers, context })
 
-server.start(() => console.log('Server is running on localhost:4000'))
+server.start(() => console.log('Server is running on 127.0.0.1:4000'))

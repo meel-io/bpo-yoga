@@ -8,6 +8,11 @@ mkdirp(resolve(__dirname, "../live"));
 
 const db = new Lowdb(new FileSync(resolve(__dirname, "../live/db.json")));
 
+if (db.get("agents")) {
+    db.set('agents', [])
+        .write()
+}
+
 db.defaults({ agents: [] }).write();
 
 const getRandomQuantity = () => {
@@ -93,4 +98,4 @@ const getRoomRates = () => {
 db
     .get("agents")
     .push(...getAgents())
-.write();
+    .write();

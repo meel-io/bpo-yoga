@@ -1,3 +1,4 @@
 node_modules
 live/db.json
-.idea
+.vscode
+.eslintignore
